@@ -1,0 +1,36 @@
+﻿@page "/counter"
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+
+<ul style="margin-top: 5px;">
+    @for (int x = 0; x < cities.Length; x++)
+    {
+        <li>
+            @cities[x]
+        </li>
+    }
+</ul>
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+    private string[] cities = new string[]
+    {
+        "Ankara",
+        "İstanbul",
+        "İzmir",
+        "Bursa",
+        "Eskişehir",
+        "Karabük"
+    };
+}
